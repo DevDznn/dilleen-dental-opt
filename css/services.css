@@ -1,0 +1,170 @@
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.svc {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(29, 59, 87, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.svc:hover {
+  border-color: rgba(108, 135, 162, 0.35);
+  box-shadow: 0 22px 44px rgba(29, 59, 87, 0.14);
+  transform: translateY(-6px);
+}
+
+.svc .ph {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  background: linear-gradient(
+    135deg,
+    var(--sky-soft),
+    var(--sky)
+  );
+}
+
+/* Dark gradient behind the category badge */
+.svc .ph::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 50%;
+  background: linear-gradient(
+    to top,
+    rgba(29, 59, 87, 0.72),
+    transparent
+  );
+  content: "";
+  pointer-events: none;
+}
+
+/* Full service image */
+.svc .ph .dd {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.45s ease;
+}
+
+.svc:hover .ph .dd {
+  transform: scale(1.055);
+}
+
+/* Service category badge */
+.svc .ph .chip {
+  position: absolute;
+  z-index: 2;
+  bottom: 15px;
+  left: 16px;
+  max-width: calc(100% - 32px);
+  padding: 6px 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  background: rgba(29, 59, 87, 0.88);
+  color: #fff;
+  backdrop-filter: blur(6px);
+  font-family: var(--head);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Card content */
+.svc .bd {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding: 23px 24px 26px;
+}
+
+.svc h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 18.5px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.svc p {
+  flex: 1;
+  margin: 0;
+  color: var(--body);
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+.svc .more {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 7px;
+  margin-top: 4px;
+  color: var(--slate);
+  font-family: var(--head);
+  font-size: 13.5px;
+  font-weight: 600;
+  transition:
+    gap 0.2s ease,
+    color 0.2s ease;
+}
+
+.svc:hover .more {
+  gap: 12px;
+  color: var(--navy);
+}
+
+.svc:focus-visible {
+  outline: 3px solid var(--sky);
+  outline-offset: 4px;
+}
+
+/* Tablet */
+@media (max-width: 920px) {
+  .svc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .svc .ph {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Mobile */
+@media (max-width: 620px) {
+  .svc-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .svc .ph {
+    aspect-ratio: 16 / 11;
+  }
+
+  .svc .bd {
+    padding: 20px 20px 23px;
+  }
+}

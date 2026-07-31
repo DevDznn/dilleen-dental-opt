@@ -1,0 +1,500 @@
+/* ========================================
+   PAYMENTS AND HEALTH FUNDS
+======================================== */
+
+.funds {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(207, 231, 242, 0.42),
+      transparent 30%
+    ),
+    var(--paper);
+}
+
+.funds.section {
+  padding-top: clamp(64px, 7vw, 88px);
+  padding-bottom: clamp(64px, 7vw, 88px);
+}
+
+/* ========================================
+   HEADING
+======================================== */
+
+.funds-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+  align-items: end;
+  gap: clamp(36px, 6vw, 76px);
+  margin-bottom: 42px;
+}
+
+.funds-heading h2 {
+  max-width: 650px;
+  margin-bottom: 0;
+}
+
+.funds-heading .secsub {
+  max-width: 520px;
+  margin: 0;
+  color: var(--body);
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+
+/* ========================================
+   PROVIDER SHOWCASE
+======================================== */
+
+.provider-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: start;
+  gap: clamp(38px, 5vw, 64px);
+  padding: 34px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.funds .provider-label {
+  margin-bottom: 18px;
+  color: var(--slate);
+  font-family: var(--head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   COMPACT BENEFITS
+======================================== */
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+  border-top: 1px solid var(--line);
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+  padding: 17px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.benefit-check {
+  display: flex;
+  flex: 0 0 26px;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.benefit-item h3 {
+  margin: 0 0 4px;
+  color: var(--navy);
+  font-family: var(--head);
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.benefit-item p {
+  margin: 0;
+  color: var(--body);
+  font-size: 12.75px;
+  line-height: 1.55;
+}
+
+/* ========================================
+   HEALTH FUND LOGOS
+======================================== */
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.logo-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 82px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.88);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.logo-tile:hover {
+  border-color: rgba(108, 135, 162, 0.4);
+  box-shadow: 0 12px 26px rgba(29, 59, 87, 0.1);
+  transform: translateY(-3px);
+}
+
+.logo-tile img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 38px;
+  object-fit: contain;
+}
+
+.logo-tile-all-funds {
+  border-color: #d7ecf8;
+  background: var(--sky-soft);
+  color: var(--navy);
+  font-family: var(--head);
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* ========================================
+   NIB NOTICE
+======================================== */
+
+.nib-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.nib-note .note-mark {
+  display: flex;
+  flex: 0 0 24px;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--slate);
+  border-radius: 50%;
+  color: var(--navy);
+  font-family: var(--head);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.nib-note p {
+  margin: 0;
+  color: var(--body);
+  font-size: 12.75px;
+  line-height: 1.6;
+}
+
+.nib-note b {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+/* ========================================
+   LOWER SECTIONS
+======================================== */
+
+.payment-details {
+  margin-top: 36px;
+}
+
+.payment-details > .provider-label {
+  margin-bottom: 16px;
+}
+
+/* ========================================
+   GOVERNMENT PROGRAMS
+======================================== */
+
+.program-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.program-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px 26px 22px 0;
+}
+
+.program-item + .program-item {
+  padding-right: 0;
+  padding-left: 26px;
+  border-left: 1px solid var(--line);
+}
+
+.program-icon {
+  display: flex;
+  flex: 0 0 34px;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: var(--navy);
+}
+
+.program-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.program-copy h3 {
+  margin: 0 0 6px;
+  color: var(--navy);
+  font-family: var(--head);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.program-copy p {
+  max-width: 500px;
+  margin: 0;
+  color: var(--body);
+  font-size: 12.75px;
+  line-height: 1.65;
+}
+
+/* ========================================
+   PAYMENT LOGO SCROLLER
+======================================== */
+
+.payment-options {
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.payment-logo-grid {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 6%,
+    #000 94%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 6%,
+    #000 94%,
+    transparent
+  );
+}
+
+.payment-logo-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: payment-logo-scroll 45s linear infinite;
+  will-change: transform;
+}
+
+.payment-logo-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 54px;
+  padding-right: 54px;
+  white-space: nowrap;
+}
+
+.payment-logo {
+  display: flex;
+  flex: 0 0 135px;
+  align-items: center;
+  justify-content: center;
+  width: 135px;
+  min-height: 56px;
+}
+
+.payment-logo img {
+  display: block;
+  width: auto;
+  max-width: 130px;
+  max-height: 46px;
+  object-fit: contain;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.payment-logo--wide {
+  flex-basis: 165px;
+  width: 165px;
+}
+
+.payment-logo--wide img {
+  max-width: 155px;
+}
+
+.payment-logo:hover img {
+  opacity: 0.82;
+  transform: scale(1.05);
+}
+
+@keyframes payment-logo-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 920px) {
+  .funds-heading {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .funds-heading .secsub {
+    max-width: 680px;
+  }
+
+  .provider-showcase {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding: 30px 0;
+  }
+
+  .provider-panel {
+    max-width: 680px;
+    width: 100%;
+  }
+
+  .payment-logo-group {
+    gap: 44px;
+    padding-right: 44px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 620px) {
+  .funds.section {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+
+  .funds-heading {
+    margin-bottom: 30px;
+  }
+
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .logo-tile {
+    min-height: 75px;
+    padding: 11px;
+  }
+
+  .logo-tile img {
+    max-height: 34px;
+  }
+
+  .payment-details {
+    margin-top: 30px;
+  }
+
+  .program-list {
+    grid-template-columns: 1fr;
+  }
+
+  .program-item {
+    padding: 20px 0;
+  }
+
+  .program-item + .program-item {
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .payment-logo-grid {
+    padding: 20px 0;
+  }
+
+  .payment-logo-group {
+    gap: 34px;
+    padding-right: 34px;
+  }
+
+  .payment-logo {
+    flex-basis: 110px;
+    width: 110px;
+    min-height: 50px;
+  }
+
+  .payment-logo img {
+    max-width: 105px;
+    max-height: 40px;
+  }
+
+  .payment-logo--wide {
+    flex-basis: 140px;
+    width: 140px;
+  }
+
+  .payment-logo--wide img {
+    max-width: 130px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .payment-logo-track {
+    animation-play-state: paused;
+  }
+}

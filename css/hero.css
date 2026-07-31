@@ -1,0 +1,334 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: calc(100dvh - var(--topbar-height) - var(--header-height));
+  padding: 0;
+
+  background-image: url("../images/hero-background-2.png");
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: cover;
+
+  isolation: isolate;
+}
+
+.hero-overlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    rgba(248, 252, 255, 0.68) 0%,
+    rgba(248, 252, 255, 0.52) 35%,
+    rgba(248, 252, 255, 0.18) 62%,
+    rgba(248, 252, 255, 0.04) 100%
+  );
+}
+
+.hero .wrap {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: clamp(30px, 4vw, 60px);
+  padding-top: clamp(24px, 4vh, 56px);
+  padding-bottom: clamp(24px, 4vh, 56px);
+}
+
+.hero-content {
+  max-width: 590px;
+}
+
+.gbadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 16px;
+  border: 1px solid rgba(29, 59, 87, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 24px rgba(29, 59, 87, 0.1);
+  color: var(--ink);
+  backdrop-filter: blur(8px);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.gbadge .stars {
+  color: #f4b400;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  margin: clamp(14px, 2vh, 22px) 0 clamp(12px, 1.8vh, 18px);
+  color: var(--navy);
+  font-size: clamp(38px, 4vw, 58px);
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 1.08;
+}
+
+.hero h1 em {
+  display: block;
+  color: var(--slate);
+  font-style: normal;
+}
+
+.hero p.sub {
+  max-width: 560px;
+  color: #40566a;
+  font-size: clamp(15px, 1.2vw, 17.5px);
+  line-height: 1.65;
+}
+
+.hero .cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: clamp(18px, 3vh, 30px);
+  flex-wrap: wrap;
+}
+
+.hero .micro {
+  display: flex;
+  gap: 18px;
+  margin-top: clamp(16px, 2.5vh, 26px);
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.hero .micro span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.gbadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.gbadge:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.gbadge:focus-visible {
+  outline: 3px solid var(--sky, #cfe7f2);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* Right-side image */
+.hero-art {
+  position: relative;
+  width: 100%;
+  height: min(58vh, 500px);
+  min-height: 330px;
+}
+
+.blob {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 5px solid rgba(255, 255, 255, 0.75);
+  border-radius: 38px 38px 180px 38px;
+  background: var(--sky);
+  box-shadow: 0 30px 65px rgba(29, 59, 87, 0.28);
+}
+
+.blob::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(29, 59, 87, 0.55), transparent 48%);
+  content: "";
+  pointer-events: none;
+}
+
+.blob .dd {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.hero-art:hover .blob .dd {
+  transform: scale(1.035);
+}
+
+.photochip {
+  position: absolute;
+  z-index: 2;
+  bottom: 22px;
+  left: 22px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--navy);
+  backdrop-filter: blur(8px);
+  font-family: var(--head);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.floatcard {
+  position: absolute;
+  z-index: 3;
+  top: 26px;
+  right: -16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 19px;
+  border: 1px solid rgba(29, 59, 87, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 18px 38px rgba(29, 59, 87, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.floatcard .num {
+  color: var(--navy);
+  font-family: var(--head);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.floatcard .num-accent {
+  color: var(--slate);
+}
+
+.floatcard .lab {
+  color: var(--body);
+  font-size: 11.5px;
+  line-height: 1.35;
+}
+
+/* Tablet */
+@media (max-width: 920px) {
+  .hero .wrap {
+    grid-template-columns: 1fr 0.9fr;
+    gap: 30px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 44px);
+  }
+
+  .hero-art {
+    height: min(52vh, 430px);
+    min-height: 300px;
+  }
+
+  .floatcard {
+    right: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .hero {
+    height: calc(100vh - var(--topbar-height) - var(--header-height));
+
+    height: calc(100dvh - var(--topbar-height) - var(--header-height));
+  }
+
+  .hero-overlay {
+    background: rgba(240, 249, 253, 0.88);
+  }
+
+  .hero .wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(170px, 1fr);
+    align-content: center;
+    gap: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .gbadge {
+    padding: 6px 11px;
+    font-size: 11px;
+  }
+
+  .hero h1 {
+    margin: 12px 0 10px;
+    font-size: clamp(30px, 8vw, 38px);
+  }
+
+  .hero p.sub {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .hero .cta {
+    gap: 9px;
+    margin-top: 15px;
+  }
+
+  .hero .cta .btn {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  .hero .micro {
+    gap: 7px 14px;
+    margin-top: 12px;
+    font-size: 11px;
+  }
+
+  .hero-art {
+    width: min(100%, 500px);
+    height: 100%;
+    min-height: 170px;
+    margin: 0 auto;
+  }
+
+  .blob {
+    border-width: 3px;
+    border-radius: 22px 22px 80px 22px;
+  }
+
+  .photochip {
+    right: 14px;
+    bottom: 13px;
+    left: 14px;
+    padding: 6px 10px;
+    font-size: 9px;
+    text-align: center;
+  }
+
+  .floatcard {
+    top: 12px;
+    right: 10px;
+    padding: 9px 12px;
+  }
+
+  .floatcard .num {
+    font-size: 19px;
+  }
+
+  .floatcard .lab {
+    font-size: 9.5px;
+  }
+}

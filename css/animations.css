@@ -1,0 +1,10 @@
+.rv {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.rv.in {
+  opacity: 1;
+  transform: none;
+}

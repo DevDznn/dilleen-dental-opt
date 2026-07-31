@@ -1,0 +1,242 @@
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+  overflow: hidden;
+  background: #2a4864;
+  color: #b9cddf;
+  font-size: 14px;
+}
+
+footer .top {
+  display: grid;
+  grid-template-columns:
+    minmax(230px, 1.3fr)
+    minmax(130px, 0.7fr)
+    minmax(240px, 1.25fr)
+    minmax(210px, 1fr);
+  align-items: start;
+  gap: 44px;
+  padding: 60px 0 44px;
+}
+
+footer .top > div {
+  min-width: 0;
+}
+
+/* Logo and introduction */
+
+footer img.lockup {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin-left: -6px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.footer-intro {
+  max-width: 290px;
+  margin: 16px 0 0;
+  color: #b9cddf;
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+
+/* Column headings */
+
+footer h4 {
+  position: relative;
+  margin: 0 0 19px;
+  padding-bottom: 10px;
+  color: #fff;
+  font-family: var(--head);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+footer h4::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--sky);
+  content: "";
+}
+
+/* Footer lists */
+
+footer ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer li {
+  color: #b9cddf;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+footer a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+footer a:hover {
+  color: #fff;
+  transform: translateX(3px);
+}
+
+footer a:focus-visible {
+  border-radius: 3px;
+  outline: 2px solid var(--sky);
+  outline-offset: 4px;
+}
+
+/* Nine service links */
+
+.footer-services {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-services li {
+  min-width: 0;
+}
+
+.footer-services a {
+  color: #b9cddf;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.footer-services a:hover {
+  color: var(--sky);
+  transform: translateX(4px);
+}
+
+/* Contact information */
+
+footer a[href^="tel:"] {
+  color: #fff;
+  font-family: var(--head);
+  font-weight: 600;
+}
+
+footer a[href^="mailto:"] {
+  overflow-wrap: anywhere;
+}
+
+.footer-hours {
+  margin-top: 4px;
+  padding-top: 13px;
+  border-top: 1px solid rgba(185, 205, 223, 0.2);
+  color: #a9bfd2;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* Because Smiles Matter */
+
+footer .tag {
+  display: inline-block;
+  margin-top: 18px;
+  color: #8fa9c0;
+  font-family: var(--head);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* Bottom copyright section */
+
+footer .base {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 24px;
+  padding: 21px 0;
+  border-top: 1px solid #3a5c7a;
+  color: #8fa9c0;
+  font-size: 12px;
+  line-height: 1.5;
+  flex-wrap: wrap;
+}
+
+footer .base span:last-child {
+  text-align: right;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 920px) {
+  footer .top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 46px 54px;
+    padding-top: 52px;
+  }
+
+  footer img.lockup {
+    max-width: 235px;
+  }
+
+  .footer-intro {
+    max-width: 350px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 620px) {
+  footer .top {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding: 48px 0 38px;
+  }
+
+  footer img.lockup {
+    max-width: 225px;
+    margin-left: 0;
+  }
+
+  .footer-intro {
+    max-width: 100%;
+  }
+
+  footer h4 {
+    margin-bottom: 17px;
+  }
+
+  footer .base {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    padding: 18px 0;
+  }
+
+  footer .base span:last-child {
+    text-align: left;
+  }
+}
