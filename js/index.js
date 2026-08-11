@@ -4,9 +4,7 @@ addEventListener("scroll", () =>
 );
 document
   .getElementById("burger")
-  .addEventListener("click", () =>
-    document.body.classList.toggle("menuopen"),
-  );
+  .addEventListener("click", () => document.body.classList.toggle("menuopen"));
 document
   .querySelectorAll("#mainnav a")
   .forEach((a) =>
@@ -87,8 +85,7 @@ function prepareTrustAnimation() {
         const easedProgress = 1 - Math.pow(1 - progress, 3);
         const currentValue = target * easedProgress;
 
-        element.textContent =
-          currentValue.toFixed(decimals) + suffix;
+        element.textContent = currentValue.toFixed(decimals) + suffix;
 
         if (progress < 1) {
           requestAnimationFrame(updateNumber);
@@ -181,10 +178,90 @@ function prepareTrustAnimation() {
 }
 
 if (document.readyState === "loading") {
-  document.addEventListener(
-    "DOMContentLoaded",
-    prepareTrustAnimation,
-  );
+  document.addEventListener("DOMContentLoaded", prepareTrustAnimation);
 } else {
   prepareTrustAnimation();
+}
+
+const initServicesSlider = () => {
+  document.querySelectorAll("[data-services-slider]").forEach((slider) => {
+    if (slider.dataset.sliderReady === "true") return;
+    slider.dataset.sliderReady = "true";
+
+    const track = slider.querySelector("[data-services-track]");
+    const cards = Array.from(track.querySelectorAll(".svc"));
+    const previousButton = slider.querySelector("[data-services-prev]");
+    const nextButton = slider.querySelector("[data-services-next]");
+    const currentLabel = slider.querySelector("[data-services-current]");
+    const progress = slider.querySelector("[data-services-progress]");
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (!cards.length) return;
+
+    const cardStep = () => {
+      const styles = window.getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+      return cards[0].getBoundingClientRect().width + gap;
+    };
+
+    const visibleCount = () =>
+      Math.max(1, Math.round(track.clientWidth / cardStep()));
+
+    const updateSlider = () => {
+      const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+      const firstVisible = Math.min(
+        cards.length - 1,
+        Math.max(0, Math.round(track.scrollLeft / cardStep())),
+      );
+      const lastVisible = Math.min(cards.length, firstVisible + visibleCount());
+
+      currentLabel.textContent =
+        lastVisible > firstVisible + 1
+          ? `${String(firstVisible + 1).padStart(2, "0")}–${String(
+              lastVisible,
+            ).padStart(2, "0")}`
+          : String(firstVisible + 1).padStart(2, "0");
+
+      progress.style.width = `${(lastVisible / cards.length) * 100}%`;
+      previousButton.disabled = track.scrollLeft <= 2;
+      nextButton.disabled = track.scrollLeft >= maxScroll - 2;
+    };
+
+    const move = (direction) => {
+      track.scrollBy({
+        left: cardStep() * direction,
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+      });
+    };
+
+    previousButton.addEventListener("click", () => move(-1));
+    nextButton.addEventListener("click", () => move(1));
+
+    track.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      event.preventDefault();
+      move(event.key === "ArrowRight" ? 1 : -1);
+    });
+
+    let scrollFrame;
+    track.addEventListener(
+      "scroll",
+      () => {
+        window.cancelAnimationFrame(scrollFrame);
+        scrollFrame = window.requestAnimationFrame(updateSlider);
+      },
+      { passive: true },
+    );
+
+    window.addEventListener("resize", updateSlider, { passive: true });
+    updateSlider();
+  });
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initServicesSlider);
+} else {
+  initServicesSlider();
 }

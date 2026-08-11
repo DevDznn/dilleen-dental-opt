@@ -1,17 +1,22 @@
+/* ==================================================
+   HERO SECTION
+================================================== */
+
 .hero {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
-  height: calc(100dvh - var(--topbar-height) - var(--header-height));
+
+  min-height: calc(100dvh - var(--topbar-height) - var(--header-height));
   padding: 0;
 
-  background-image: url("../images/hero-background-2.png");
+  background-image: url("../images/hero-background.png");
   background-repeat: no-repeat;
   background-position: center 30%;
   background-size: cover;
-
-  isolation: isolate;
 }
 
+/* Much lighter hero overlay */
 .hero-overlay {
   position: absolute;
   z-index: 1;
@@ -20,196 +25,253 @@
 
   background: linear-gradient(
     90deg,
-    rgba(248, 252, 255, 0.68) 0%,
-    rgba(248, 252, 255, 0.52) 35%,
-    rgba(248, 252, 255, 0.18) 62%,
-    rgba(248, 252, 255, 0.04) 100%
+    rgba(248, 252, 255, 0.24) 0%,
+    rgba(248, 252, 255, 0.14) 30%,
+    rgba(248, 252, 255, 0.05) 52%,
+    transparent 70%
   );
 }
 
 .hero .wrap {
   position: relative;
   z-index: 2;
+
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: minmax(0, 1.02fr) minmax(430px, 0.98fr);
   align-items: center;
+  gap: clamp(42px, 5vw, 76px);
+
   width: 100%;
-  height: 100%;
-  gap: clamp(30px, 4vw, 60px);
-  padding-top: clamp(24px, 4vh, 56px);
-  padding-bottom: clamp(24px, 4vh, 56px);
+  min-height: calc(100dvh - var(--topbar-height) - var(--header-height));
+
+  padding-top: clamp(38px, 6vh, 76px);
+  padding-bottom: clamp(38px, 6vh, 76px);
 }
+
+/* ==================================================
+   LEFT CONTENT
+================================================== */
 
 .hero-content {
-  max-width: 590px;
+  max-width: 620px;
 }
 
 .gbadge {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 8px 16px;
+  gap: 8px;
+
+  padding: 9px 15px;
   border: 1px solid rgba(29, 59, 87, 0.12);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 8px 24px rgba(29, 59, 87, 0.1);
+
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 8px 28px rgba(29, 59, 87, 0.09);
+  backdrop-filter: blur(10px);
+
   color: var(--ink);
-  backdrop-filter: blur(8px);
-  font-size: 13px;
-  font-weight: 500;
-}
-
-.gbadge .stars {
-  color: #f4b400;
-  font-size: 13px;
-  letter-spacing: 2px;
-}
-
-.hero h1 {
-  margin: clamp(14px, 2vh, 22px) 0 clamp(12px, 1.8vh, 18px);
-  color: var(--navy);
-  font-size: clamp(38px, 4vw, 58px);
+  font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: -1px;
-  line-height: 1.08;
-}
-
-.hero h1 em {
-  display: block;
-  color: var(--slate);
-  font-style: normal;
-}
-
-.hero p.sub {
-  max-width: 560px;
-  color: #40566a;
-  font-size: clamp(15px, 1.2vw, 17.5px);
-  line-height: 1.65;
-}
-
-.hero .cta {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: clamp(18px, 3vh, 30px);
-  flex-wrap: wrap;
-}
-
-.hero .micro {
-  display: flex;
-  gap: 18px;
-  margin-top: clamp(16px, 2.5vh, 26px);
-  color: var(--navy);
-  font-size: 13px;
-  font-weight: 600;
-  flex-wrap: wrap;
-}
-
-.hero .micro span {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.gbadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  color: inherit;
+  line-height: 1;
   text-decoration: none;
-  cursor: pointer;
+
   transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.gbadge,
+.blob .dd {
+  transition: none;
 }
 
 .gbadge:hover {
-  opacity: 0.85;
-  transform: translateY(-1px);
+  transform: none;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 8px 28px rgba(29, 59, 87, 0.09);
+}
+
+.hero-art:hover .blob .dd {
+  transform: none;
 }
 
 .gbadge:focus-visible {
   outline: 3px solid var(--sky, #cfe7f2);
   outline-offset: 4px;
-  border-radius: 6px;
 }
 
-/* Right-side image */
+.gbadge .stars {
+  color: #f4b400;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+
+.hero h1 {
+  max-width: 610px;
+  margin: clamp(20px, 3vh, 30px) 0 18px;
+
+  color: var(--navy);
+  font-family: var(--head);
+  font-size: clamp(46px, 4.8vw, 68px);
+  font-weight: 650;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.hero h1 em {
+  display: block;
+  margin-top: 8px;
+
+  color: var(--slate);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.hero p.sub {
+  max-width: 575px;
+  margin: 0;
+
+  color: #40566a;
+  font-size: clamp(15.5px, 1.2vw, 17.5px);
+  font-weight: 400;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.hero .cta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-top: clamp(24px, 3.5vh, 34px);
+}
+
+.hero .cta .btn {
+  min-height: 48px;
+  padding: 13px 22px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.hero .micro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+
+  margin-top: clamp(20px, 3vh, 28px);
+
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hero .micro span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==================================================
+   RIGHT TEAM IMAGE
+================================================== */
+
 .hero-art {
   position: relative;
   width: 100%;
-  height: min(58vh, 500px);
-  min-height: 330px;
+  height: clamp(390px, 59vh, 570px);
 }
 
 .blob {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border: 5px solid rgba(255, 255, 255, 0.75);
-  border-radius: 38px 38px 180px 38px;
+
+  /* Equal radius on every corner */
+  border: 4px solid rgba(255, 255, 255, 0.72);
+  border-radius: 32px;
+
   background: var(--sky);
-  box-shadow: 0 30px 65px rgba(29, 59, 87, 0.28);
+  box-shadow:
+    0 28px 65px rgba(29, 59, 87, 0.22),
+    0 8px 24px rgba(29, 59, 87, 0.1);
 }
 
+/* Subtle image shading only */
 .blob::after {
+  display: none;
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(29, 59, 87, 0.55), transparent 48%);
   content: "";
   pointer-events: none;
+
+  background: linear-gradient(
+    to top,
+    rgba(29, 59, 87, 0.32) 0%,
+    rgba(29, 59, 87, 0.05) 35%,
+    transparent 58%
+  );
 }
 
 .blob .dd {
+  display: block;
   width: 100%;
   height: 100%;
+
   object-fit: cover;
   object-position: center;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease;
 }
 
-.hero-art:hover .blob .dd {
-  transform: scale(1.035);
-}
+
 
 .photochip {
   position: absolute;
   z-index: 2;
-  bottom: 22px;
-  left: 22px;
-  padding: 8px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  bottom: 20px;
+  left: 20px;
+
+  padding: 8px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.9);
+
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+
   color: var(--navy);
-  backdrop-filter: blur(8px);
   font-family: var(--head);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .floatcard {
   position: absolute;
   z-index: 3;
-  top: 26px;
-  right: -16px;
+  top: 24px;
+  right: -18px;
+
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 15px 19px;
+
+  padding: 15px 18px;
   border: 1px solid rgba(29, 59, 87, 0.08);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 18px 38px rgba(29, 59, 87, 0.2);
-  backdrop-filter: blur(8px);
+
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 40px rgba(29, 59, 87, 0.18);
+  backdrop-filter: blur(10px);
 }
 
 .floatcard .num {
   color: var(--navy);
   font-family: var(--head);
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 700;
   line-height: 1;
 }
@@ -220,24 +282,27 @@
 
 .floatcard .lab {
   color: var(--body);
-  font-size: 11.5px;
-  line-height: 1.35;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
-/* Tablet */
-@media (max-width: 920px) {
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 1020px) {
   .hero .wrap {
-    grid-template-columns: 1fr 0.9fr;
-    gap: 30px;
+    grid-template-columns: minmax(0, 1fr) minmax(350px, 0.85fr);
+    gap: 36px;
   }
 
   .hero h1 {
-    font-size: clamp(36px, 5vw, 44px);
+    font-size: clamp(40px, 5vw, 54px);
   }
 
   .hero-art {
-    height: min(52vh, 430px);
-    min-height: 300px;
+    height: clamp(350px, 52vh, 470px);
   }
 
   .floatcard {
@@ -245,83 +310,101 @@
   }
 }
 
-/* Mobile */
+/* ==================================================
+   MOBILE
+================================================== */
+
 @media (max-width: 700px) {
   .hero {
-    height: calc(100vh - var(--topbar-height) - var(--header-height));
+    min-height: calc(100dvh - var(--topbar-height) - var(--header-height));
 
-    height: calc(100dvh - var(--topbar-height) - var(--header-height));
+    background-position: center;
   }
 
-  .hero-overlay {
-    background: rgba(240, 249, 253, 0.88);
+   .hero-overlay {
+    background: rgba(240, 249, 253, 0.35);
   }
 
   .hero .wrap {
     grid-template-columns: 1fr;
-    grid-template-rows: auto minmax(170px, 1fr);
-    align-content: center;
-    gap: 18px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    gap: 28px;
+
+    min-height: auto;
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+
+  .hero-content {
+    max-width: 100%;
   }
 
   .gbadge {
-    padding: 6px 11px;
-    font-size: 11px;
+    padding: 7px 11px;
+    font-size: 10.5px;
   }
 
   .hero h1 {
-    margin: 12px 0 10px;
-    font-size: clamp(30px, 8vw, 38px);
+    margin: 17px 0 14px;
+    font-size: clamp(36px, 10.5vw, 47px);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+  }
+
+  .hero h1 em {
+    margin-top: 4px;
   }
 
   .hero p.sub {
+    max-width: 100%;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
   .hero .cta {
     gap: 9px;
-    margin-top: 15px;
+    margin-top: 20px;
   }
 
   .hero .cta .btn {
-    padding: 10px 16px;
-    font-size: 12px;
+    min-height: 43px;
+    padding: 11px 16px;
+    font-size: 11.5px;
   }
 
   .hero .micro {
-    gap: 7px 14px;
-    margin-top: 12px;
-    font-size: 11px;
+    gap: 8px 14px;
+    margin-top: 17px;
+    font-size: 10.5px;
   }
 
   .hero-art {
-    width: min(100%, 500px);
-    height: 100%;
-    min-height: 170px;
-    margin: 0 auto;
+    width: 100%;
+    height: clamp(260px, 53vw, 360px);
   }
 
   .blob {
     border-width: 3px;
-    border-radius: 22px 22px 80px 22px;
+
+    /* Same radius on mobile too */
+    border-radius: 22px;
   }
 
   .photochip {
     right: 14px;
-    bottom: 13px;
+    bottom: 14px;
     left: 14px;
+
     padding: 6px 10px;
-    font-size: 9px;
+    font-size: 8.5px;
     text-align: center;
   }
 
   .floatcard {
     top: 12px;
     right: 10px;
+
     padding: 9px 12px;
+    border-radius: 12px;
   }
 
   .floatcard .num {
@@ -329,6 +412,6 @@
   }
 
   .floatcard .lab {
-    font-size: 9.5px;
+    font-size: 9px;
   }
 }
