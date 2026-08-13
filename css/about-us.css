@@ -882,7 +882,7 @@ h2 {
 }
 
 /* ========================================
-   THREE DENTIST IMAGE CARDS
+   FOUR DENTIST IMAGE CARDS
 ======================================== */
 
 .about-team__grid {
@@ -1129,14 +1129,6 @@ h2 {
     min-height: 540px;
     grid-column: auto;
     justify-self: stretch;
-  }
-
-  /* Centre the third dentist */
-
-  .about-team__member:last-child {
-    width: calc(50% - 11px);
-    grid-column: 1 / -1;
-    justify-self: center;
   }
 }
 
