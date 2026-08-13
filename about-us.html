@@ -3,11 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TEMPORARY — prototype indexing block. This site is being developed on
+         a Vercel preview domain. Remove this tag as LAUNCH CHECKLIST item #1
+         once the production domain (https://dilleendental.com.au) is live.
+         See LAUNCH_CHECKLIST.md. -->
+    <meta name="robots" content="noindex, nofollow" />
     <meta
       name="description"
       content="Meet Dilleen Dental, a QIP-accredited South Rockhampton dental practice caring for local families since 1995."
     />
     <title>About Us | Dilleen Dental</title>
+    <link rel="canonical" href="https://dilleendental.com.au/about-us.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dilleen Dental" />
+    <meta property="og:locale" content="en_AU" />
+    <meta property="og:url" content="https://dilleendental.com.au/about-us.html" />
+    <meta property="og:title" content="About Us | Dilleen Dental" />
+    <meta
+      property="og:description"
+      content="Meet Dilleen Dental, a QIP-accredited South Rockhampton dental practice caring for local families since 1995."
+    />
+    <meta
+      property="og:image"
+      content="https://dilleendental.com.au/images/blue-long-logo.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Us | Dilleen Dental" />
+    <meta
+      name="twitter:description"
+      content="Meet Dilleen Dental, a QIP-accredited South Rockhampton dental practice caring for local families since 1995."
+    />
+    <meta
+      name="twitter:image"
+      content="https://dilleendental.com.au/images/blue-long-logo.png"
+    />
+
+    <link
+      rel="icon"
+      href="images/blue-logo.png"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,6 +54,48 @@
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/about-us.css" />
     <link rel="stylesheet" href="css/footer.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Dentist",
+          "@id": "https://dilleendental.com.au/#organization",
+          "name": "Dilleen Dental",
+          "url": "https://dilleendental.com.au/",
+          "logo": "https://dilleendental.com.au/images/blue-long-logo.png",
+          "telephone": "+61 7 4922 3039",
+          "email": "info@dilleendental.com.au",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "80 Archer Street",
+            "addressLocality": "Rockhampton",
+            "addressRegion": "QLD",
+            "postalCode": "4700",
+            "addressCountry": "AU"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://dilleendental.com.au/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About Us",
+              "item": "https://dilleendental.com.au/about-us.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
 
   <body>
@@ -158,14 +235,14 @@
 
               <img
                 class="who-photo"
-                src="images/about-us-1.png"
+                src="images/about-us-2.png"
                 alt=""
                 aria-hidden="true"
               />
 
               <img
                 class="who-photo"
-                src="images/about-us-1.png"
+                src="images/about-us-3.png"
                 alt=""
                 aria-hidden="true"
               />

@@ -4,11 +4,41 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- TEMPORARY — prototype indexing block. This site is being developed
+           on a Vercel preview domain. Remove this tag as LAUNCH CHECKLIST
+           item #1 once the production domain (https://dilleendental.com.au)
+           is live. See LAUNCH_CHECKLIST.md. -->
+      <meta name="robots" content="noindex, nofollow" />
       <meta
         name="description"
         content="Meet the Dilleen Dental team providing thoughtful, personalised dental care for the Rockhampton community."
       />
       <title>Our Team | Dilleen Dental</title>
+      <link rel="canonical" href="https://dilleendental.com.au/full-team.html" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Dilleen Dental" />
+      <meta property="og:locale" content="en_AU" />
+      <meta property="og:url" content="https://dilleendental.com.au/full-team.html" />
+      <meta property="og:title" content="Our Team | Dilleen Dental" />
+      <meta
+        property="og:description"
+        content="Meet the Dilleen Dental team providing thoughtful, personalised dental care for the Rockhampton community."
+      />
+      <meta
+        property="og:image"
+        content="https://dilleendental.com.au/images/full-team-bg-hero.png"
+      />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Our Team | Dilleen Dental" />
+      <meta
+        name="twitter:description"
+        content="Meet the Dilleen Dental team providing thoughtful, personalised dental care for the Rockhampton community."
+      />
+      <meta
+        name="twitter:image"
+        content="https://dilleendental.com.au/images/full-team-bg-hero.png"
+      />
 
       <link
         rel="icon"
@@ -26,6 +56,69 @@
       <link rel="stylesheet" href="css/header.css" />
       <link rel="stylesheet" href="css/full-team.css" />
       <link rel="stylesheet" href="css/footer.css" />
+
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Dentist",
+            "@id": "https://dilleendental.com.au/#organization",
+            "name": "Dilleen Dental",
+            "url": "https://dilleendental.com.au/"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://dilleendental.com.au/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Our Team",
+                "item": "https://dilleendental.com.au/full-team.html"
+              }
+            ]
+          },
+          {
+            "@type": "Person",
+            "name": "Dr Priyanka Rathi",
+            "jobTitle": "Principal Dentist",
+            "description": "With over 18 years of experience, Priyanka provides gentle, patient-centred care for Rockhampton families.",
+            "image": "https://dilleendental.com.au/images/dr-priyanka-2.png",
+            "worksFor": { "@id": "https://dilleendental.com.au/#organization" }
+          },
+          {
+            "@type": "Person",
+            "name": "Dr Ryan Chen",
+            "jobTitle": "Dentist",
+            "description": "Ryan combines a calm, patient-focused approach with a strong interest in cosmetic, restorative and comprehensive dentistry.",
+            "image": "https://dilleendental.com.au/images/dr.ryan.jpg",
+            "worksFor": { "@id": "https://dilleendental.com.au/#organization" }
+          },
+          {
+            "@type": "Person",
+            "name": "Dr Chris Xu",
+            "jobTitle": "Dentist",
+            "description": "Dr Chris Xu provides gentle, attentive care with a focus on long-term oral health and patient comfort.",
+            "image": "https://dilleendental.com.au/images/dr-chris-2.png",
+            "worksFor": { "@id": "https://dilleendental.com.au/#organization" }
+          },
+          {
+            "@type": "Person",
+            "name": "Dr Hitesh Rathi",
+            "jobTitle": "Dentist",
+            "description": "With over 20 years of clinical experience, Dr Hitesh Rathi provides skilled, compassionate and personalised care.",
+            "image": "https://dilleendental.com.au/images/dr-hetish.png",
+            "worksFor": { "@id": "https://dilleendental.com.au/#organization" }
+          }
+        ]
+      }
+      </script>
     </head>
 
     <body>
@@ -84,7 +177,7 @@
           >
           <a
             class="btn navy"
-            href="https://dilleendental.com.au/online-booking/"
+            href="appointment.html#top"
             >Book Now</a
           >
           <button class="burger" id="burger" aria-label="Menu">

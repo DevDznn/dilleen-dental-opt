@@ -3,13 +3,46 @@
 <!doctype html>
 
 <html lang="en">
-  <html lang="en">
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- TEMPORARY — prototype indexing block. This site is being developed
+           on a Vercel preview domain. Remove this tag as LAUNCH CHECKLIST
+           item #1 once the production domain (https://dilleendental.com.au)
+           is live. See LAUNCH_CHECKLIST.md. -->
+      <meta name="robots" content="noindex, nofollow" />
+      <meta
+        name="description"
+        content="Explore Dilleen Dental's dental services in Rockhampton: family dentistry, implants, crowns, veneers, Invisalign, root canal therapy, whitening, fillings and mouthguards."
+      />
       <title>
-        Dilleen Dental — Rockhampton Dentist | Because Smiles Matter
+        Dental Services in Rockhampton | Dilleen Dental
       </title>
+      <link rel="canonical" href="https://dilleendental.com.au/services.html" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Dilleen Dental" />
+      <meta property="og:locale" content="en_AU" />
+      <meta property="og:url" content="https://dilleendental.com.au/services.html" />
+      <meta property="og:title" content="Dental Services in Rockhampton | Dilleen Dental" />
+      <meta
+        property="og:description"
+        content="Explore Dilleen Dental's dental services in Rockhampton: family dentistry, implants, crowns, veneers, Invisalign, root canal therapy, whitening, fillings and mouthguards."
+      />
+      <meta
+        property="og:image"
+        content="https://dilleendental.com.au/images/services/services-bg.png"
+      />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Dental Services in Rockhampton | Dilleen Dental" />
+      <meta
+        name="twitter:description"
+        content="Explore Dilleen Dental's dental services in Rockhampton: family dentistry, implants, crowns, veneers, Invisalign, root canal therapy, whitening, fillings and mouthguards."
+      />
+      <meta
+        name="twitter:image"
+        content="https://dilleendental.com.au/images/services/services-bg.png"
+      />
 
       <link
         rel="icon"
@@ -27,6 +60,111 @@
       <link rel="stylesheet" href="css/header.css" />
       <link rel="stylesheet" href="css/service-page.css" />
       <link rel="stylesheet" href="css/footer.css" />
+
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Dentist",
+            "@id": "https://dilleendental.com.au/#organization",
+            "name": "Dilleen Dental",
+            "url": "https://dilleendental.com.au/",
+            "makesOffer": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Family Dentistry",
+                  "description": "Preventive, restorative and general dental care for children, adults and families in Rockhampton."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Dental Implants",
+                  "description": "Dental implant options designed to restore the appearance, stability and function of missing teeth."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Crowns, Veneers & Bridges",
+                  "description": "Custom porcelain crowns, veneers and bridges created to restore damaged teeth, enhance selected teeth and replace missing teeth."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Full Mouth Rehabilitation",
+                  "description": "A coordinated treatment plan designed to restore multiple teeth, improve function and rebuild your smile."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Teeth Whitening",
+                  "description": "Professional in-chair whitening and take-home options tailored to your smile and lifestyle."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Invisalign",
+                  "description": "A discreet, removable aligner system used to gradually move teeth into a planned position."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Root Canal Therapy",
+                  "description": "Treatment for an infected or inflamed tooth, designed to relieve symptoms and help save the natural tooth."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Tooth-Coloured Fillings",
+                  "description": "Composite fillings shaped and colour-matched to restore damaged or decayed teeth."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Sports Mouthguards",
+                  "description": "Custom-fitted mouthguards designed to provide secure and comfortable protection during sport."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://dilleendental.com.au/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://dilleendental.com.au/services.html"
+              }
+            ]
+          }
+        ]
+      }
+      </script>
     </head>
 
     <body>
@@ -85,7 +223,7 @@
           >
           <a
             class="btn navy"
-            href="https://dilleendental.com.au/online-booking/"
+            href="appointment.html#top"
             >Book Now</a
           >
           <button class="burger" id="burger" aria-label="Menu">
@@ -601,5 +739,4 @@
     </footer>
         <script src="js/services.js"></script>
   </body>
-  </html>
 </html>

@@ -1,0 +1,14 @@
+# PRODUCTION robots.txt — prepared during the SEO phase, NOT yet active.
+#
+# This file is a reference only. Do not rename or activate this file until
+# the production domain (https://dilleendental.com.au) is live and the
+# temporary noindex/nofollow protection has been removed from every page.
+#
+# LAUNCH STEP: once live, replace the contents of the real /robots.txt
+# (currently a blanket "Disallow: /" for prototype protection) with the
+# content below.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://dilleendental.com.au/sitemap.xml

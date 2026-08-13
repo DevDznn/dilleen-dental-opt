@@ -3,10 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TEMPORARY — prototype indexing block. This site is being developed on
+         a Vercel preview domain. Remove this tag as LAUNCH CHECKLIST item #1
+         once the production domain (https://dilleendental.com.au) is live.
+         See LAUNCH_CHECKLIST.md. -->
+    <meta name="robots" content="noindex, nofollow" />
     <title>Dilleen Dental — Rockhampton Dentist | Because Smiles Matter</title>
     <meta
       name="description"
       content="Dilleen Dental is a QIP accredited family dental practice caring for South Rockhampton since 1995. General, cosmetic, implant and Invisalign dentistry. Book online or call (07) 4922 3039."
+    />
+    <link rel="canonical" href="https://dilleendental.com.au/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dilleen Dental" />
+    <meta property="og:locale" content="en_AU" />
+    <meta property="og:url" content="https://dilleendental.com.au/" />
+    <meta
+      property="og:title"
+      content="Dilleen Dental — Rockhampton Dentist | Because Smiles Matter"
+    />
+    <meta
+      property="og:description"
+      content="QIP accredited family dental practice caring for South Rockhampton since 1995. General, cosmetic, implant and Invisalign dentistry."
+    />
+    <meta
+      property="og:image"
+      content="https://dilleendental.com.au/images/blue-long-logo.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Dilleen Dental — Rockhampton Dentist | Because Smiles Matter"
+    />
+    <meta
+      name="twitter:description"
+      content="QIP accredited family dental practice caring for South Rockhampton since 1995. General, cosmetic, implant and Invisalign dentistry."
+    />
+    <meta
+      name="twitter:image"
+      content="https://dilleendental.com.au/images/blue-long-logo.png"
     />
     <link
       rel="icon"
@@ -36,6 +72,53 @@
     <link rel="stylesheet" href="css/contact.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/animations.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Dentist",
+          "@id": "https://dilleendental.com.au/#organization",
+          "name": "Dilleen Dental",
+          "url": "https://dilleendental.com.au/",
+          "logo": "https://dilleendental.com.au/images/blue-long-logo.png",
+          "image": "https://dilleendental.com.au/images/blue-long-logo.png",
+          "telephone": "+61 7 4922 3039",
+          "email": "info@dilleendental.com.au",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "80 Archer Street",
+            "addressLocality": "Rockhampton",
+            "addressRegion": "QLD",
+            "postalCode": "4700",
+            "addressCountry": "AU"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Friday"],
+              "opens": "08:00",
+              "closes": "17:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Thursday",
+              "opens": "08:00",
+              "closes": "17:30"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://dilleendental.com.au/#website",
+          "url": "https://dilleendental.com.au/",
+          "name": "Dilleen Dental",
+          "publisher": { "@id": "https://dilleendental.com.au/#organization" }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="top" class="topbar">
@@ -422,9 +505,11 @@
                 <div class="program-copy">
                   <h3>Child Dental Benefits Schedule</h3>
                   <p>
-                    Eligible children may access up to $1,000 in basic dental
-                    services over two consecutive calendar years. Eligibility and
-                    available balances apply.
+                    Eligible children may access bulk-billed basic dental
+                    services under the CDBS, up to a capped amount set by
+                    Services Australia. Eligibility, capped amounts and
+                    available balances can change — ask our team or visit
+                    servicesaustralia.gov.au for current details.
                   </p>
                 </div>
               </article>
@@ -1268,7 +1353,7 @@
                 ></span
               >
               <span
-                >🕗 Mon – Wed &amp; Fri: 8:30 – 5:00 &nbsp;·&nbsp; Thu: 8:30 –
+                >🕗 Mon – Wed &amp; Fri: 8:00 – 5:00 &nbsp;·&nbsp; Thu: 8:00 –
                 5:30 &nbsp;·&nbsp; Sat &amp; Sun: Closed</span
               >
             </div>

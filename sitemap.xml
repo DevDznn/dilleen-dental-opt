@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Dilleen Dental — production sitemap.
+
+  IMPORTANT: every URL below uses the production domain
+  (https://dilleendental.com.au), never the Vercel prototype domain
+  (dilleen-dental.vercel.app). Per instruction, the prototype URL and this
+  sitemap must not be submitted to Google Search Console until the site is
+  live on the production domain — see LAUNCH_CHECKLIST.md.
+
+  This sitemap intentionally lists only the 6 real, independently-crawlable
+  HTML documents. It does NOT include services.html's hash routes
+  (e.g. #dental-implants, #invisalign) because those are JavaScript-rendered
+  view states on a single document, not separate server-resolvable URLs —
+  see the Phase 1 implementation audit for the full explanation. If the
+  service pages are ever migrated to real individual URLs, this sitemap
+  must be updated to include them at that time.
+
+  lastmod dates are intentionally omitted rather than fabricated, since no
+  reliable last-modified data was available at the time this file was
+  generated.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://dilleendental.com.au/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://dilleendental.com.au/about-us.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dilleendental.com.au/full-team.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dilleendental.com.au/services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dilleendental.com.au/appointment.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dilleendental.com.au/contact-team.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>
