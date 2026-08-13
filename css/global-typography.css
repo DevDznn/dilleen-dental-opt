@@ -1,0 +1,306 @@
+:root {
+  --type-display-size: clamp(54px, 7vw, 92px);
+  --type-section-size: clamp(35px, 4.7vw, 57px);
+  --type-feature-size: clamp(31px, 4vw, 47px);
+  --type-profile-size: clamp(29px, 3.6vw, 44px);
+  --type-service-card-size: clamp(21px, 2vw, 26px);
+  --type-card-size: 19px;
+  --type-body-size: 16px;
+  --type-small-size: 14px;
+}
+
+/*
+  Global Dilleen Dental typography system.
+  The visual hierarchy follows the Our Team page: Jost for display text,
+  Mulish for readable body copy, medium display titles and strong section titles.
+*/
+html {
+  font-size: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  color: var(--body, #4a5b6c);
+  font-family: var(--body-font, "Mulish", sans-serif);
+  font-size: var(--type-body-size);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+}
+
+body :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--head, "Jost", sans-serif);
+  text-wrap: balance;
+}
+
+/* Page titles — shared by Home, About, Services, Team, Contact and Booking. */
+main h1 {
+  font-family: var(--head, "Jost", sans-serif) !important;
+  font-size: var(--type-display-size) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 0.98 !important;
+}
+
+main h1 em {
+  font-family: inherit !important;
+  font-style: normal !important;
+  font-weight: inherit !important;
+}
+
+/* Primary section titles — based on the Our Team section heading scale. */
+main h2:not(.visually-hidden) {
+  font-family: var(--head, "Jost", sans-serif) !important;
+  font-size: var(--type-section-size) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.12 !important;
+}
+
+/* Feature and call-to-action headings use one shared secondary scale. */
+main :is(
+    .services-bottom-cta,
+    .full-team-cta,
+    .visit,
+    .about-staff__content,
+    .booking-success
+  ) h2 {
+  font-size: var(--type-feature-size) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.12 !important;
+}
+
+/* Compact headings that sit inside sidebars or small information cards. */
+main :is(
+    .service-sidebar__navigation,
+    .service-help-card,
+    .booking-aside__card
+  ) h2 {
+  font-size: clamp(24px, 2.6vw, 28px) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.2 !important;
+}
+
+/* Standard content and card titles. */
+main h3 {
+  font-family: var(--head, "Jost", sans-serif) !important;
+  font-size: var(--type-card-size) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.012em !important;
+  line-height: 1.25 !important;
+}
+
+main :is(.svc, .service-card) h3 {
+  font-size: var(--type-service-card-size) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.15 !important;
+}
+
+main :is(.tm__heading, .about-team__content) h3 {
+  font-size: clamp(22px, 2vw, 27px) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.18 !important;
+}
+
+main .doctor-profile__header h3 {
+  font-size: var(--type-profile-size) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.08 !important;
+}
+
+main :is(
+    .benefit-item,
+    .program-item,
+    .service-benefit-card,
+    .service-process__item,
+    .smile-case,
+    .field-group__heading
+  ) h3 {
+  font-size: 18.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.3 !important;
+}
+
+main .approach-item h3 {
+  font-size: 19px !important;
+}
+
+main .appt-card h3 {
+  font-size: 26px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.25 !important;
+}
+
+main h4 {
+  font-family: var(--head, "Jost", sans-serif) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.005em !important;
+  line-height: 1.3 !important;
+}
+
+/* Body copy and supporting text. */
+main :is(p, li, dd) {
+  font-family: var(--body-font, "Mulish", sans-serif);
+}
+
+main p {
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.7;
+}
+
+main :is(
+    .hero .sub,
+    .page-hero__description,
+    .contact-hero__inner > div > p:not(.contact-eyebrow),
+    .appointment-intro__content > div:first-child > p:last-child
+  ) {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.65 !important;
+}
+
+main :is(.lead, .about-copy__lead, .doctor-profile__lead, .booking-step__lead) {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.005em !important;
+  line-height: 1.65 !important;
+}
+
+main :is(
+    .secsub,
+    .team-overview__heading > p,
+    .team-profiles__summary,
+    .smile-gallery__heading > p,
+    .services-index__heading > p,
+    .section-heading > p
+  ) {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.75 !important;
+}
+
+main :is(
+    .svc,
+    .service-card,
+    .value,
+    .tm,
+    .smile-case,
+    .approach-item,
+    .service-benefit-card,
+    .service-process__item
+  ) p {
+  font-size: 14.5px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.65 !important;
+}
+
+main .doctor-profile__bio p {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.72 !important;
+}
+
+/* Eyebrows and labels share one uppercase treatment on every page. */
+main :is(.kicker, .eyebrow, .ft-eyebrow, .services-eyebrow, [class*="eyebrow"]) {
+  font-family: var(--head, "Jost", sans-serif) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.22em !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase !important;
+}
+
+main :is(
+    .service-card__label,
+    .provider-label,
+    .doctor-profile__role,
+    .service-help-card__label,
+    .badge2__eyebrow
+  ) {
+  font-family: var(--head, "Jost", sans-serif) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase !important;
+}
+
+/* Controls and action text use the same Jost weight and spacing. */
+body :is(button, input, textarea, select) {
+  font-family: inherit;
+}
+
+body :is(
+    .btn,
+    .ft-button,
+    .sp-button,
+    .page-hero__button,
+    .site-book-button,
+    .form-submit
+  ) {
+  font-family: var(--head, "Jost", sans-serif) !important;
+  font-size: 14.5px;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1 !important;
+}
+
+.site-main-nav {
+  font-family: var(--head, "Jost", sans-serif) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.2 !important;
+}
+
+footer {
+  font-family: var(--body-font, "Mulish", sans-serif);
+}
+
+footer h4 {
+  font-family: var(--head, "Jost", sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+@media (max-width: 560px) {
+  :root {
+    --type-display-size: 53px;
+    --type-section-size: 35px;
+    --type-feature-size: 31px;
+    --type-profile-size: 30px;
+    --type-service-card-size: 22px;
+  }
+
+  main :is(
+      .hero .sub,
+      .page-hero__description,
+      .contact-hero__inner > div > p:not(.contact-eyebrow),
+      .appointment-intro__content > div:first-child > p:last-child
+    ) {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  :root {
+    --type-display-size: 49px;
+    --type-section-size: 34px;
+  }
+}
