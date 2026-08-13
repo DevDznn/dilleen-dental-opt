@@ -578,30 +578,6 @@ function displaySelectedService() {
   }
 }
 
-const burger = document.getElementById("burger");
-const header = document.getElementById("hdr");
-
-burger.addEventListener("click", () => {
-  const menuIsOpen = document.body.classList.toggle("menuopen");
-
-  burger.setAttribute("aria-expanded", String(menuIsOpen));
-  burger.setAttribute(
-    "aria-label",
-    menuIsOpen ? "Close navigation" : "Open navigation",
-  );
-});
-
-document.querySelectorAll("#mainnav a").forEach((link) => {
-  link.addEventListener("click", () => {
-    document.body.classList.remove("menuopen");
-    burger.setAttribute("aria-expanded", "false");
-  });
-});
-
-window.addEventListener("scroll", () => {
-  header.classList.toggle("scrolled", window.scrollY > 20);
-});
-
 window.addEventListener("hashchange", displaySelectedService);
 
 displaySelectedService();

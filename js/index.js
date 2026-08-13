@@ -1,17 +1,3 @@
-const hdr = document.getElementById("hdr");
-addEventListener("scroll", () =>
-  hdr.classList.toggle("scrolled", scrollY > 10),
-);
-document
-  .getElementById("burger")
-  .addEventListener("click", () => document.body.classList.toggle("menuopen"));
-document
-  .querySelectorAll("#mainnav a")
-  .forEach((a) =>
-    a.addEventListener("click", () =>
-      document.body.classList.remove("menuopen"),
-    ),
-  );
 const io = new IntersectionObserver(
   (es) =>
     es.forEach((e) => {

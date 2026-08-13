@@ -1,21 +1,10 @@
-const header = document.getElementById("hdr");
-const burger = document.getElementById("burger");
 const form = document.getElementById("contactForm");
 const status = document.getElementById("formStatus");
 const message = document.getElementById("message");
 const messageCount = document.getElementById("messageCount");
 
-document.getElementById("year").textContent = new Date().getFullYear();
-
-window.addEventListener("scroll", () => {
-  header.classList.toggle("scrolled", window.scrollY > 10);
-});
-
-burger.addEventListener("click", () => {
-  const isOpen = document.body.classList.toggle("menuopen");
-  burger.setAttribute("aria-expanded", String(isOpen));
-  burger.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-});
+const year = document.getElementById("year");
+if (year) year.textContent = new Date().getFullYear();
 
 message.addEventListener("input", () => {
   messageCount.textContent = `${message.value.length} / 1000`;

@@ -15,7 +15,6 @@
   const preferredDate = document.getElementById("preferredDate");
   const notes = document.getElementById("notes");
   const noteCount = document.getElementById("noteCount");
-  const burger = document.getElementById("burger");
   let currentStep = 1;
 
   const tomorrow = new Date();
@@ -231,31 +230,6 @@
       currentStep = 1;
       updateProgress();
     });
-
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-  addEventListener("scroll", () => {
-    document
-      .getElementById("hdr")
-      .classList.toggle("scrolled", scrollY > 10);
-  });
-
-  burger.addEventListener("click", () => {
-    const isOpen = document.body.classList.toggle("menuopen");
-    burger.setAttribute("aria-expanded", String(isOpen));
-    burger.setAttribute(
-      "aria-label",
-      isOpen ? "Close navigation" : "Open navigation",
-    );
-  });
-
-  document.querySelectorAll("#mainnav a").forEach((link) => {
-    link.addEventListener("click", () => {
-      document.body.classList.remove("menuopen");
-      burger.setAttribute("aria-expanded", "false");
-    });
-  });
 
   updateProgress();
 })();
