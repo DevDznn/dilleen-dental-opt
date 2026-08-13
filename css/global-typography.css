@@ -1,5 +1,5 @@
 :root {
-  --type-display-size: clamp(54px, 7vw, 92px);
+  --type-display-size: clamp(50px, 5vw, 85px);
   --type-section-size: clamp(35px, 4.7vw, 57px);
   --type-feature-size: clamp(31px, 4vw, 47px);
   --type-profile-size: clamp(29px, 3.6vw, 44px);
